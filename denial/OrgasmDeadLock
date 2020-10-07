@@ -1,0 +1,15 @@
+var lock = new SynchronizeLock();
+new Thread{run(){
+  lock.aqquire();
+  every 5 seconds{
+    slut.arausal = slut.aursal*2;
+  }
+}}.start();
+new Aspect{
+  @Arround(orgasm)
+  void cum(joinpoint){
+    lock.aqquire();
+    joinpoint.proceed();
+  }  
+  
+}

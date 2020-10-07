@@ -1,0 +1,21 @@
+function boolean sensationIsWandOnClit(Sensation s){
+	return s.type = Vibrator.MAGIC_WAND && s.attachedTo(Zones.CLIT);
+}
+
+loop every second{
+	if(sub.Route == null || sub.Route.Transport != TransportEnum.PUBLIC){
+		continue;
+	}
+	if(distance(sub.Location, sub.Route.nextTarget) < 100meter){
+		sub.Sensations.remove(SenationEnum.TIED);
+		sub.Sensations.removeWhere(sensationIsWandOnClit);
+	} else {
+		sub.Sensations.addIfMissing(SenationEnum.TIED);
+		if(sub.Sensations.anyMatch(sensationIsWandOnClit) == null){
+			sub.Sensations.add(new Vibrator(Vibrator.MAGIC_WAND, Zones.CLIT));
+		} else {
+			sub.Sensations.anyMatch(sensationIsWandOnClit).power++;
+		}
+	}
+
+}

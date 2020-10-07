@@ -1,0 +1,16 @@
+loop every 5 min {
+  zones = [clit,gspot,anal,nipples,mouth,nose]; //lets add nose to orgasm causing zones for fun
+  var chosenOne = rand(0,5);
+  zones[chosenOne].canCauseOrgasm = true;
+  var minSensitivity = 50%;
+  var maxSensitivity = 100%
+  var holesFilled = filled(holes)
+  if(holesFilled  < 2){
+    minSensitivity -= max(0,(3-holesFilled)*25);
+    maxSensitivity -= 3-holesFilled)*25;
+  }
+  zones[chosenOne].sensitivity = rand(minSensitivity,maxSensitivity);
+  for each zone != chosenOne{
+    zone.canCauseOrgasm = false;
+    zone.sensitivity = rand(minSensitivity*10,maxSensitivity*10);
+  }

@@ -1,0 +1,11 @@
+//Diapers recommanded
+
+function void loseControl(){
+	sub.Bladder.looseControl();
+	Thread.sleep(10sec);
+	sub.Bladder.grantControl();
+}
+
+loop{
+	sub.AudioIn.addListener(Sounds.bark,loseControl);
+}

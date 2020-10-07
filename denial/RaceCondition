@@ -1,0 +1,16 @@
+var orgasmAllowed = false; //lets be safe an set it to false by default
+new Thread(){run(){
+  if(watching porn){
+    orgasmAllowed = true;
+  }
+}}.start();
+new Thread(){run(){
+  if(wearing collar){
+    orgasmAllowed = false;
+  }
+}}.start();
+new Thread(){run(){
+  if(orgasmAllowed){
+    cum();
+  }
+}}.start();
